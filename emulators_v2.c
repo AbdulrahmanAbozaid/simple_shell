@@ -30,7 +30,8 @@ int unsetAlias(info_t *info, char *alias)
 		return (1);
 	ch = *pc;
 	*pc = 0;
-	res = delete_node_at_index(&(info->alias), getNodeIndex(info->alias, isNodePrefix(info->alias, alias, -1)));
+	res = delete_node_at_index(&(info->alias), getNodeIndex(info->alias,
+															isNodePrefix(info->alias, alias, -1)));
 	*pc = ch;
 	return (res);
 }

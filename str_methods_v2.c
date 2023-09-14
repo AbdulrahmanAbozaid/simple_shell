@@ -41,7 +41,7 @@ char *_strdup(const char *src)
 		return (NULL);
 	for (len++; len--;)
 		dest[len] = *--src;
-	return dest;
+	return (dest);
 }
 
 /**
@@ -71,7 +71,7 @@ void _puts(char *str)
 
 int _putchar(char c)
 {
-	static int ind = 0;
+	static int ind;
 	static char str[MAX_BUF_SIZE];
 
 	if (c == BUF_FLUSH || ind >= MAX_BUF_SIZE)

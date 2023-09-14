@@ -43,7 +43,7 @@ void setInfo(struct info *info, char **argv)
 		info->argC = ind;
 		getAliasVal(info);
 		getVarVal(info);
-    }
+	}
 }
 
 /**

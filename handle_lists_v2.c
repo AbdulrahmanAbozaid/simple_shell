@@ -92,7 +92,7 @@ list_t *isNodePrefix(list_t *list, char *prefix, char c)
 	{
 		tmp = start_by(list->str, prefix);
 		if (tmp && ((c == -1) || (c == *tmp)))
-			return list;
+			return (list);
 		list = list->next;
 	}
 	return (NULL);

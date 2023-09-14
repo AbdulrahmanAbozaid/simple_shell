@@ -2,7 +2,8 @@
 
 /**
  * mExit - Exit the process
- * @info: the exit status of the process and exit code returned from the process
+ * @info: the exit status of the process and
+ * exit code returned from the process
  * Return: the exit status of the process
  */
 

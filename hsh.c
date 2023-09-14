@@ -17,7 +17,6 @@ int hsh(info_t *info, char **argv)
 		clearInfoT(info);
 		if (isActive(info))
 		{
-			/* TODO remove $  */
 			_puts("$ ");
 		}
 		_eputchar(BUF_FLUSH);
@@ -37,7 +36,6 @@ int hsh(info_t *info, char **argv)
 			_putchar(BUF_FLUSH);
 		}
 		freeInfoT(info, 0);
-		/*_putchar(BUF_FLUSH);*/
 	}
 	writeHistory(info);
 	freeInfoT(info, 1);

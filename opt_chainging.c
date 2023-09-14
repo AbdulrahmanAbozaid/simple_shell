@@ -24,7 +24,7 @@ int isChained(info_t *info, char *cmd, size_t *s)
 		ts++;
 		info->cmd_buf_type = AND_MODE;
 	}
-	else if ((cmd[ts] = ';'))
+	else if ((cmd[ts] == ';'))
 	{
 		cmd[ts] = 0;
 		info->cmd_buf_type = CHAIN_MODE;
@@ -45,7 +45,8 @@ int isChained(info_t *info, char *cmd, size_t *s)
  * Return: 0 if the command
  */
 
-void checkChainMode(info_t *info, char *cmd, size_t *curr, size_t i, size_t len)
+void checkChainMode(info_t *info, char *cmd,
+					size_t *curr, size_t i, size_t len)
 {
 	size_t jt = *curr;
 
@@ -114,7 +115,8 @@ int getVarVal(info_t *info)
 			continue;
 		if (!_strcmp(info->argv[it], "$?"))
 		{
-			replaceString(&(info->argv[it]), _strdup(convert_radix(info->status, 10, 0)));
+			replaceString(&(info->argv[it]),
+						  _strdup(convert_radix(info->status, 10, 0)));
 			continue;
 		}
 		if (!_strcmp(info->argv[it], "$$"))

@@ -50,7 +50,7 @@ ssize_t readInput(info_t *info)
 	ssize_t res = 0;
 	char **tbuf = &(info->arg), *buf_temp;
 	static char *buffer;
-	static size_t it = 0, j = 0, length = 0;
+	static size_t it, j, length;
 
 	if (length)
 		length = 0;

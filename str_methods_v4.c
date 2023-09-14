@@ -17,7 +17,9 @@ char **split(char *src, char *delimiter)
 	if (!delimiter)
 		delimiter = " ";
 	for (; src[ind] != '\0'; ind++)
-		if (!is_delim(src[ind], delimiter) && (is_delim(src[ind + 1], delimiter) || !src[ind + 1]))
+		if (!is_delim(src[ind], delimiter) && (is_delim(src[ind + 1],
+														delimiter) ||
+											   !src[ind + 1]))
 			w_len++;
 	if (w_len == 0)
 		return (NULL);
@@ -62,8 +64,7 @@ char **split_ch(char *src, char delimiter)
 	if (src == NULL || src[0] == 0)
 		return (NULL);
 	for (; src[ind] != '\0'; ind++)
-		if ((src[ind] != delimiter && (src[ind + 1] == delimiter || !src[ind + 1])) ||
-				src[ind + 1] == delimiter)
+		if ((src[ind] != delimiter && (src[ind + 1] == delimiter || !src[ind + 1])) || src[ind + 1] == delimiter)
 			w_len++;
 	if (w_len == 0)
 		return (NULL);

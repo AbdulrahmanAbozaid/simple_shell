@@ -27,10 +27,11 @@ char *_memset(char *s, char b, unsigned int n)
 void flushArr(char **arr)
 {
 	char **tmp = arr;
+
 	if (!arr)
 		return;
 	while (*arr)
-        free(*arr++);
+		free(*arr++);
 	free(tmp);
 }
 
@@ -45,7 +46,7 @@ void flushArr(char **arr)
 void *_realloc(void *oldMem, unsigned int old_size, unsigned int new_size)
 {
 	char *newMem;
-	
+
 	if (!oldMem)
 		return (malloc(new_size));
 	if (!new_size)
