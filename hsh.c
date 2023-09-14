@@ -11,6 +11,7 @@ int hsh(info_t *info, char **argv)
 {
 	int bRes = 0;
 	ssize_t i = 0;
+
 	while (i != -1 && bRes != -2)
 	{
 		clearInfoT(info);
@@ -116,8 +117,7 @@ void findCmnd(info_t *info)
 	}
 	else
 	{
-		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/') 
-				&& isExec(info, info->argv[0]))
+		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/') && isExec(info, info->argv[0]))
 			forkCmd(info);
 		else if (*(info->arg) != '\n')
 		{
@@ -144,7 +144,7 @@ void forkCmd(info_t *info)
 		perror("Unable to fork");
 		return;
 		/* NOTYET: Error Handler */
-    }
+	}
 	if (cpid == 0)
 	{
 		/* Parent Process */
