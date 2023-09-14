@@ -85,10 +85,11 @@ typedef struct info
 	int cmd_buf_type;
 	int historyCount;
 } info_t;
-#define INIT_INFO                                                                       \
-	{                                                                                   \
-		0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL, 0, 0 \
-	}
+#define INIT_INFO \
+{ \
+	0, 0, 0, NULL, NULL, NULL, NULL, 0, 0, NULL,\
+		NULL, NULL, NULL, 0, 0, NULL, 0, 0\
+}
 /**
  * struct builtIn - built-in
  * @typ: string
@@ -167,7 +168,8 @@ int isExec(info_t *info, char *path);
 char *getSubPath(char *pathStr, int begin, int end);
 char *findPath(info_t *info, char *pathStr, char *cmd);
 int isChained(info_t *info, char *cmd, size_t *s);
-void checkChainMode(info_t *info, char *cmd, size_t *curr, size_t i, size_t len);
+void checkChainMode(info_t *info, char *cmd, size_t *curr,
+		size_t i, size_t len);
 int getAliasVal(info_t *info);
 int getVarVal(info_t *info);
 int replaceString(char **past, char *new);

@@ -115,7 +115,8 @@ void findCmnd(info_t *info)
 	}
 	else
 	{
-		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/') && isExec(info, info->argv[0]))
+		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/')
+				&& isExec(info, info->argv[0]))
 			forkCmd(info);
 		else if (*(info->arg) != '\n')
 		{

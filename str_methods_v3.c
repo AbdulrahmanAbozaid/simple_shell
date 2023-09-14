@@ -51,8 +51,7 @@ char *_strncat(char *dest, char *src, int n)
 
 char *_strchr(char *str, char c)
 {
-	do
-	{
+	do {
 		if (*str == c)
 		{
 			return (str);
