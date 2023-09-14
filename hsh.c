@@ -11,12 +11,12 @@ int hsh(info_t *info, char **argv)
 {
 	int bRes = 0;
 	ssize_t i = 0;
+
 	while (i != -1 && bRes != -2)
 	{
 		clearInfoT(info);
 		if (isActive(info))
 		{
-			/* TODO remove $  */
 			_puts("$ ");
 		}
 		_eputchar(BUF_FLUSH);
@@ -36,7 +36,6 @@ int hsh(info_t *info, char **argv)
 			_putchar(BUF_FLUSH);
 		}
 		freeInfoT(info, 0);
-		/*_putchar(BUF_FLUSH);*/
 	}
 	writeHistory(info);
 	freeInfoT(info, 1);
@@ -116,7 +115,7 @@ void findCmnd(info_t *info)
 	}
 	else
 	{
-		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/') 
+		if ((isActive(info) || getEnv(info, "PATH=") || info->argv[0][0] == '/')
 				&& isExec(info, info->argv[0]))
 			forkCmd(info);
 		else if (*(info->arg) != '\n')
@@ -144,7 +143,7 @@ void forkCmd(info_t *info)
 		perror("Unable to fork");
 		return;
 		/* NOTYET: Error Handler */
-    }
+	}
 	if (cpid == 0)
 	{
 		/* Parent Process */
