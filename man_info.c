@@ -71,7 +71,7 @@ void freeInfoT(info_t *info, int al)
 		info->environment = NULL;
 		/* NotYet*** */
 		free_nil((void **)info->cmd_buf);
-		if (info->readfd == 2)
+		if (info->readfd > 2)
 			close(info->readfd);
 		_putchar(BUF_FLUSH);
 	}

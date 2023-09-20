@@ -45,6 +45,7 @@ int mCD(info_t *info)
 		_puts("TODO: >>getcwd failed here<<\n"); /* getcwd failure emsg here */
 	if (!info->argv[1])
 	{
+		cdDir = getEnv(info, "HOME=");
 		if (!cdDir)
 			cdRes = chdir((cdDir = getEnv(info, "PWD=")) ? cdDir : "/");
 		else

@@ -34,7 +34,7 @@ char **listStringfy(list_t *list)
 	if (!len || !list)
 		return (NULL);
 	result = malloc((len + 1) * sizeof(char *));
-	if (result)
+	if (!result)
 		return (NULL);
 	for (len = 0; plist; plist = plist->next, len++)
 	{

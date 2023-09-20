@@ -39,7 +39,7 @@ int writeHistory(info_t *info)
 		return (-1);
 	fdr = open(fn, O_CREAT | O_TRUNC | O_RDWR, 0644);
 	free(fn);
-	if (!fdr)
+	if (fdr == -1)
 		return (-1);
 	for (hist = info->history; hist; hist = hist->next)
 	{

@@ -26,7 +26,7 @@ char **getEnvironment(info_t *info)
 int unsetEnvVar(info_t *info, char *var)
 {
 	list_t *env = info->env;
-	size_t i;
+	size_t i = 0;
 	char *pc;
 
 
@@ -62,7 +62,7 @@ int setEnvVar(info_t *info, char *var, char *val)
 	list_t *env;
 	char *pc, *buff = NULL;
 
-	if (!var || !var)
+	if (!var || !val)
 		return (0);
 
 	buff = malloc(_strlen(var) + _strlen(val) + 2);

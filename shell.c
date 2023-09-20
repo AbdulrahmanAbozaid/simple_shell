@@ -10,10 +10,10 @@
 int main(int argc, char **argv)
 {
 	info_t info[] = {INIT_INFO};
-	int fdr = 0;
+	int fdr = 2;
 
 	/* TODO: weird asm */
-	asm("mov %1, %0\n\t; add %1, %0"
+	asm("mov %1, %0\n\t; add $3, %0"
 			: "=r"(fdr)
 			: "r"(fdr));
 	if (argc == 2)
@@ -29,7 +29,7 @@ int main(int argc, char **argv)
 				_eputs(": 0: Can't open ");
 				_eputs(argv[1]);
 				_eputchar('\n');
-				_putchar(BUF_FLUSH);
+				_eputchar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
