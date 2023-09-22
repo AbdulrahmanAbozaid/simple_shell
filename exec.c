@@ -4,6 +4,7 @@
  * runCmnd - run a command
  * @cmnd: command
  * @argv: arguments
+ * @idx: fsfsa
  * Return: command
  */
 
