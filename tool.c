@@ -56,3 +56,59 @@ void rmv_cmnt(char *str)
 		}
 }
 
+
+/**
+ * replaceString - replace a string with a new string (replace_string)
+ * @f: the string to be replaced
+ * @s: the string to be replaced
+ * Return: s the new string
+ */
+
+int replaceString(char **f, char *s)
+{
+	free(*f), *f = NULL;
+	*f = s;
+	return (1);
+}
+
+/**
+ * rep_stpp - rep a string
+ * @cmnd: the string to be rep
+ * @status: the status
+ * Return: success [1], else [0]
+ */
+int rep_stpp(char **cmnd, int status)
+{
+	int i = 0;
+	char *s = NULL;
+
+	for (i = 0; cmnd[i]; i++)
+	{
+		if (cmnd[i][0] != '$' || !cmnd[i][1])
+			continue;
+
+		if (_strcmp(cmnd[i], "$?") == 0)
+		{
+			replaceString(&(cmnd[i]), _itoa_c(status));
+			return (1);
+		}
+		else if (_strcmp(cmnd[i], "$$") == 0)
+		{
+			replaceString(&(cmnd[i]), _itoa_c(getpid()));
+			return (1);
+		}
+		else if (cmnd[i][0] == '$' && cmnd[i][1])
+		{
+			s = _getenv(cmnd[i] + 1);
+			if (!s)
+			{
+				replaceString(&(cmnd[i]), _strdup(""));
+				return (0);
+			}
+			replaceString(&(cmnd[i]), s);
+		}
+	}
+
+	return (0);
+}
+

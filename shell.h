@@ -42,5 +42,7 @@ void putEnv(char **cmnd, int *stato);
 int isPos(char *s);
 int _atoi_c(char *s);
 void rmv_cmnt(char *str);
+int replaceString(char **f, char *s);
+int rep_stpp(char **cmnd, int status);
 
 #endif /* _SHELL_H */

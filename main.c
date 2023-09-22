@@ -27,13 +27,13 @@ int main(int argc, char **argv)
 			{
 				write(STDOUT_FILENO, "\n", 1);
 			}
-		return (status);
+			return (status);
 		}
 		ctr++;
 		cmnd = splitto(ln);
 		if (!cmnd)
 			continue;
-
+		rep_stpp(cmnd, status);
 		if (isInner(cmnd[0]))
 			runInner(cmnd, argv, &status, ctr);
 		else
