@@ -41,5 +41,6 @@ void exitHsh(char **command, char **argv, int *status, int idx);
 void putEnv(char **cmnd, int *stato);
 int isPos(char *s);
 int _atoi_c(char *s);
+void rmv_cmnt(char *str);
 
 #endif /* _SHELL_H */

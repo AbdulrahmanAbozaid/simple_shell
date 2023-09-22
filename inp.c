@@ -17,6 +17,7 @@ char *readLine(void)
 		free(lin);
 		return (NULL);
 	}
+	rmv_cmnt(lin);
 	return (lin);
 }
 

@@ -38,3 +38,21 @@ int _atoi_c(char *s)
 	return (res);
 }
 
+/**
+ * rmv_cmnt - rmv_cmnt
+ * @str: the name of the
+ * Return: 0
+ */
+
+void rmv_cmnt(char *str)
+{
+	int indx;
+
+	for (indx = 0; str[indx] != '\0'; indx++)
+		if (str[indx] == '#' && (!indx || str[indx - 1] == ' '))
+		{
+			str[indx] = '\0';
+			break;
+		}
+}
+
