@@ -1,23 +1,6 @@
 #include "shell.h"
 
 /**
- * _strlen - len
- * @s: string
- * Return: int
- */
-
-int _strlen(char *s)
-{
-	int ctr = 0;
-
-	if (!s)
-		return (ctr);
-	while (*s++)
-		ctr++;
-	return (ctr);
-}
-
-/**
  * _strcmp - strcmp
  * @s1: string
  * @s2: string
@@ -42,22 +25,6 @@ int _strcmp(char *s1, char *s2)
 }
 
 /**
- * start_by - start
- * @src: src
- * @needle: need
- *
- * Return: add
- */
-
-char *start_by(const char *src, const char *needle)
-{
-	while (*needle)
-		if (*needle++ != *src++)
-			return (NULL);
-	return ((char *)src);
-}
-
-/**
  * _strcat - cat
  * @dest: se
  * @src: f
@@ -75,3 +42,4 @@ char *_strcat(char *dest, char *src)
 	*dest = *src;
 	return (tmp);
 }
+
