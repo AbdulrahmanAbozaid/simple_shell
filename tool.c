@@ -11,7 +11,7 @@ int isPos(char *s)
 	int it;
 
 	if (!s)
-        return (0);
+		return (0);
 	for (it = 0; s[it]; it++)
 	{
 		if (s[it] < '0' || s[it] > '9')

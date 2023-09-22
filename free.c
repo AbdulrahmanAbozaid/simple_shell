@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ * freeMatrix - dsafasf
+ * @mat: fsfa
+ * Return: ffe
+ */
+
 void freeMatrix(char **mat)
 {
 	int i = 0;

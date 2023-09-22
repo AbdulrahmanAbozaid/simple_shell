@@ -44,7 +44,9 @@ void runInner(char **command, char **argv, int *status, int idx)
 /**
  * exitHsh - exit the process with the environment
  * @command: string of commands
+ * @argv: fsfsdf
  * @status: exit status
+ * @idx: fasfsf
  * Return: void
  */
 

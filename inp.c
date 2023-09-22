@@ -44,7 +44,7 @@ void putError(char *name, char *cmnd, int idx)
 }
 
 /**
- * _itoa - convert string to unsigned
+ * _itoa_c - convert string to unsigned
  * @num: number of bytes
  * Return: number of bytes
  */
